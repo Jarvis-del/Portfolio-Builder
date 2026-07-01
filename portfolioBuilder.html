@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Forge</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <div class="app-header">
+    <h1>Portfolio<span>Forge</span></h1>
+    <div class="steps" id="stepIndicator"><b>1</b> Template &nbsp;→&nbsp; 2 Details &nbsp;→&nbsp; 3 Preview</div>
+  </div>
+
+  <!-- STEP 1: TEMPLATE GALLERY -->
+  <div class="step active" id="step1">
+    <div class="gallery-intro">
+      <h2>Pick a portfolio template</h2>
+      <p>Choose a look. You'll fill in your details next, and only those details — no contact info — appear on the public page.</p>
+    </div>
+    <div class="tpl-grid" id="tplGrid"></div>
+  </div>
+
+  <!-- STEP 2: FORM -->
+  <div class="step" id="step2">
+    <div class="form-card">
+      <h2>Add your details</h2>
+      <p class="sub">These fill in the template you picked. Phone, email and LinkedIn are intentionally left out of the public page.</p>
+
+      <div class="field">
+        <label for="fName">Full name</label>
+        <input type="text" id="fName" placeholder="Aanya Sharma">
+        <div class="error" id="err-fName">Enter your name.</div>
+      </div>
+
+      <div class="field">
+        <label for="fTitle">Professional title</label>
+        <input type="text" id="fTitle" placeholder="Frontend Developer">
+      </div>
+
+      <div class="field">
+        <label for="fBio">About / bio</label>
+        <textarea id="fBio" placeholder="A short paragraph about who you are and what you do."></textarea>
+      </div>
+
+      <div class="field">
+        <label for="fSkills">Skills <span class="hint">comma separated</span></label>
+        <input type="text" id="fSkills" placeholder="React, TypeScript, Figma, Node.js">
+      </div>
+
+      <div class="field" style="border-top:1px solid var(--line);padding-top:18px;">
+        <label style="font-size:14px;">Projects <span class="hint">add up to two — both will appear together under one "Projects" section</span></label>
+      </div>
+
+      <div class="field">
+        <label for="fProject1Title">Project 1 — name</label>
+        <input type="text" id="fProject1Title" placeholder="e.g. Realtime Chat App">
+      </div>
+      <div class="field">
+        <label for="fProject1Desc">Project 1 — description</label>
+        <textarea id="fProject1Desc" placeholder="What you built, the stack, and the outcome."></textarea>
+      </div>
+
+      <div class="field">
+        <label for="fProject2Title">Project 2 — name <span class="hint">optional</span></label>
+        <input type="text" id="fProject2Title" placeholder="e.g. E-commerce Dashboard">
+      </div>
+      <div class="field">
+        <label for="fProject2Desc">Project 2 — description <span class="hint">optional</span></label>
+        <textarea id="fProject2Desc" placeholder="What you built, the stack, and the outcome."></textarea>
+      </div>
+
+      <div class="field" style="border-top:1px solid var(--line);padding-top:18px;">
+        <label for="fExperience">Experience</label>
+        <textarea id="fExperience" placeholder="Roles, companies, dates and responsibilities."></textarea>
+      </div>
+
+      <div class="field">
+        <label for="fEducation">Education</label>
+        <textarea id="fEducation" placeholder="Degrees, institutions, and dates."></textarea>
+      </div>
+
+      <div class="field">
+        <label>Resume <span class="hint">PDF, kept in this browser only — never uploaded to a server</span></label>
+        <div class="upload-box" id="uploadBox">
+          <p id="uploadLabel">Click to choose a PDF file</p>
+        </div>
+        <input type="file" id="fResume" accept="application/pdf" style="display:none;">
+      </div>
+
+      <div class="row-actions">
+        <button class="btn btn-ghost" id="backTo1">Back to templates</button>
+        <button class="btn btn-primary" id="toPreview">Generate portfolio</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 3: PREVIEW -->
+  <div class="step" id="step3">
+    <div class="preview-toolbar">
+      <div class="left">
+        <button class="btn btn-ghost" id="backTo2">Edit details</button>
+        <button class="btn btn-ghost" id="backTo1b">Change template</button>
+      </div>
+    </div>
+    <div class="preview-frame" id="previewFrame"></div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
